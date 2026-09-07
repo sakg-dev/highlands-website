@@ -6,7 +6,7 @@ export const Background = ({ dy }) => {
     useEffect(()=>{
         if(imageRef.current){
             const currentVal = parseInt(imageRef.current.style.top.split("px")[0])
-            imageRef.current.style.top = `${currentVal+dy}px`
+            imageRef.current.style.top = `${currentVal+(dy)}px`
         }
     },[dy])
     return (

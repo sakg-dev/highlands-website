@@ -2,12 +2,17 @@
 import { Hero } from '@/app/components/Hero.js'
 import { HowItWorks } from '@/app/components/HowItWorks.js'
 import { Background } from '@/app/components/Background.js'
+import { WhatIs } from '@/app/components/WhatIs.js'
+import { Prizes } from '@/app/components/Prizes.js'
+
 import { useEffect, useState, useRef } from 'react'
 
 export default function Home() {
     let sections = [
         Hero,
-        HowItWorks
+        WhatIs,
+        HowItWorks,
+        Prizes
     ]
 
     const scrollY = useRef(0);
