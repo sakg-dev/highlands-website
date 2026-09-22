@@ -11,14 +11,14 @@ const useTracker = () => {
             const currentScrollY = window.scrollY;
             const currentHeightProgress = currentScrollY / (siteHeight - screenHeight);
             setProgress(currentHeightProgress)
-        }
+        };
 
-        window.addEventListener("scroll", handleScroll)
+        window.addEventListener("scroll", handleScroll);
 
-        return () => { window.removeEventListener("scroll", handleScroll) }
-    }, [])
+        return () => { window.removeEventListener("scroll", handleScroll) };
+    }, []);
 
-    return [progress]
+    return [progress];
 }
 
 export default useTracker;
