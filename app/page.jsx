@@ -4,32 +4,17 @@ import { HowItWorks } from '@/app/components/HowItWorks.js'
 import { Background } from '@/app/components/Background.js'
 import { WhatIs } from '@/app/components/WhatIs.js'
 import { Prizes } from '@/app/components/Prizes.js'
-
-import { useEffect, useState, useRef } from 'react'
+import useTracker from '@/app/hooks/useTracker.js'
 
 export default function Home() {
+    const [dy] = useTracker();
+
     let sections = [
         Hero,
         WhatIs,
         HowItWorks,
         Prizes
     ]
-
-    const scrollY = useRef(0);
-    const [dy, setDy] = useState(0);
-
-    useEffect(()=>{
-        const handleScroll = (event)=>{
-            // console.log("scrolling")
-            // console.log(event)
-            const oldY = scrollY.current;
-            scrollY.current = window.scrollY;
-            setDy(scrollY.current - oldY);
-        }
-        window.addEventListener("scroll", handleScroll)
-        // TODO: rmv the event when return
-    }, [])
-
 
     return (
         <div className="overflow-x-hidden">

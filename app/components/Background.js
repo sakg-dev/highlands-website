@@ -10,7 +10,7 @@ export const Background = ({ dy }) => {
     };
 
     const computeTop = (imgHeight, screenHeight) => {
-        return -1 * (imgHeight - screenHeight*2)
+        return -1 * (imgHeight - screenHeight*1.5)
     }
 
     useEffect(()=>{
