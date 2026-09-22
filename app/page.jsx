@@ -7,7 +7,7 @@ import { Prizes } from '@/app/components/Prizes.js'
 import useTracker from '@/app/hooks/useTracker.js'
 
 export default function Home() {
-    const [dy] = useTracker();
+    const [ progress ] = useTracker();
 
     let sections = [
         Hero,
@@ -18,7 +18,7 @@ export default function Home() {
 
     return (
         <div className="overflow-x-hidden">
-            <Background dy={dy} />
+            <Background progress={progress} />
             <div className="flex flex-col">
                 {sections.map((_, idx)=>{
                     let Comp = sections[idx]

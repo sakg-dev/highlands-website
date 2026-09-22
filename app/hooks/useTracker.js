@@ -1,24 +1,24 @@
 import { useEffect, useRef, useState } from 'react'
 
 const useTracker = () => {
-    const scrollY = useRef(0);
-    const [dy, setDy] = useState(0);
+    const [progress, setProgress] = useState(0)
 
-    // Get the total height of the website, get the height of the individual comps(through sections arr), based on current scroll, calculate percentage of thing that has been scrolled and triger if any callback is given..
     useEffect(()=>{
-        const handleScroll = (event)=>{
-            // console.log("scrolling")
-            // console.log(event)
-            const oldY = scrollY.current;
-            scrollY.current = window.scrollY;
-            setDy(scrollY.current - oldY);
-            console.log(scrollY)
+        const siteHeight = document.body.scrollHeight;
+        const screenHeight = screen.height;
+
+        const handleScroll = (event) => {
+            const currentScrollY = window.scrollY;
+            const currentHeightProgress = currentScrollY / (siteHeight - screenHeight);
+            setProgress(currentHeightProgress)
         }
+
         window.addEventListener("scroll", handleScroll)
-        // TODO: rmv the event when return
+
+        return () => { window.removeEventListener("scroll", handleScroll) }
     }, [])
 
-    return [dy]
+    return [progress]
 }
 
 export default useTracker;
