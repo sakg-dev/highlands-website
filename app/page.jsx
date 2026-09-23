@@ -4,6 +4,7 @@ import { HowItWorks } from '@/app/components/HowItWorks.js'
 import { Background } from '@/app/components/Background.js'
 import { WhatIs } from '@/app/components/WhatIs.js'
 import { Prizes } from '@/app/components/Prizes.js'
+import { Destination } from '@/app/components/Destination.js'
 import useTracker from '@/app/hooks/useTracker.js'
 
 export default function Home() {
@@ -13,7 +14,8 @@ export default function Home() {
         Hero,
         WhatIs,
         HowItWorks,
-        Prizes
+        Prizes,
+        Destination
     ]
 
     return (
