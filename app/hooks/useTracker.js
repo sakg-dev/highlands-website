@@ -5,11 +5,11 @@ const useTracker = () => {
 
     useEffect(()=>{
         const siteHeight = document.body.scrollHeight;
-        const screenHeight = screen.height;
+        const viewportHeight = window.innerHeight;
 
         const handleScroll = (event) => {
             const currentScrollY = window.scrollY;
-            const currentHeightProgress = currentScrollY / (siteHeight - screenHeight);
+            const currentHeightProgress = currentScrollY / (siteHeight - viewportHeight);
             setProgress(currentHeightProgress)
         };
 
